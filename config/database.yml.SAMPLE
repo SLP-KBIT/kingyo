@@ -5,10 +5,10 @@ default: &default
   username: kingyo_SAMPLE
 development:
   <<: *default
-  database: kingyo_development
+  database: kingyo_development_SAMPLE
 test:
   <<: *default
-  database: kingyo_test
+  database: kingyo_test_SAMPLE
 production:
   <<: *default
   database: kingyo_production
