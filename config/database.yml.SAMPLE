@@ -1,0 +1,15 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  username: kingyo_SAMPLE
+development:
+  <<: *default
+  database: kingyo_development
+test:
+  <<: *default
+  database: kingyo_test
+production:
+  <<: *default
+  database: kingyo_production
+  password: <%= ENV['KINGYO_DATABASE_PASSWORD'] %>
