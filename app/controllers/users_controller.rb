@@ -3,8 +3,9 @@ class UsersController < ApplicationController
   def index
     @users = User.all
   end
+  
   def new
-   @user = User.new
+    @user = User.new
   end
 
   def create
@@ -14,13 +15,14 @@ class UsersController < ApplicationController
     user.save
     redirect_to users_path
   end
+
   def destroy
-   User.find(params[:id]).destroy
-   flash[:success] = "User deleted"
-   redirect_to users_url
+    User.find(params[:id]).destroy
+    flash[:success] = "User deleted"
+    redirect_to users_url
   end
   #管理者かどうかの確認
   def is_admin
-   redirect_to(root_url) unless current_user.admin?
+    redirect_to(root_url) unless current_user.admin?
   end
 end
