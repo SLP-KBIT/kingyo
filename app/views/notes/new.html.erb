@@ -1,13 +1,20 @@
-<h1>ノートの新規作成</h1>
+<div class="container" bg-info>
+  <h1>ノートの新規作成</h1>
+</div>
 
 <%= form_for @note do |f| %>
-  <div>
-    <h3>タイトル</h3>
-    <%= f.text_field :title %>
+  <div class="container" bg-info>
+    <div>
+      <h3>タイトル</h3>
+      <%= f.text_field :title, :class => "form-control" %>
+    </div>
+    <div>
+      <h3>テキスト</h3>
+      <%= f.text_area  :content, :class => "form-control" %>
+    </div>
   </div>
-  <div>
-    <h3>テキスト</h3>
-    <%= f.text_area  :content  %>
+  <div class="container" bg-info>
+    <br />
+    <%= f.submit '登録', :class => "btn btn-primary" %>
   </div>
-  <%= f.submit '登録' %>
 <% end %>
