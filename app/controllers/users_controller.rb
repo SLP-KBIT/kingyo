@@ -16,6 +16,18 @@ class UsersController < ApplicationController
     redirect_to users_path
   end
 
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  def update
+    user = User.find(params[:id])
+    user.account      = params['user']['account']
+    user.mail_address = params['user']['mail_address']
+    user.save
+    redirect_to users_path
+  end
+
   def destroy
     User.find(params[:id]).destroy
     flash[:success] = "User deleted"

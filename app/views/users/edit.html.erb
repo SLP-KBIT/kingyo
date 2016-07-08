@@ -1,0 +1,13 @@
+<h1>ユーザ編集</h1>
+
+<%= form_for @user do |form| %>
+  <div>
+    <label>アカウント</label>
+    <%= form.text_field :account %>
+  </div>
+  <div>
+    <label>メールアドレス</label>
+    <%= form.text_field :mail_address %>
+  </div>
+  <%= form.submit '登録' %>
+<% end %>
