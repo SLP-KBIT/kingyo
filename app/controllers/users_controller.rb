@@ -20,7 +20,7 @@ class UsersController < ApplicationController
    redirect_to users_url
   end
   #管理者かどうかの確認
-  def admin_user
+  def is_admin
    redirect_to(root_url) unless current_user.admin?
   end
 end
