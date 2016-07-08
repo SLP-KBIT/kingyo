@@ -2,11 +2,11 @@
 
 <%= form_for @note do |form| %>
   <div>
-    <label>タイトル<label>
+    <h3>タイトル</h3>
     <%= form.text_field :title %>
   </div>
   <div>
-    <label>テキスト<label>
+    <h3>テキスト</h3>
     <%= form.text_area  :content  %>
   </div>
   <%= form.submit '登録' %>
