@@ -1,0 +1,22 @@
+<h1>ユーザー一覧</h1>
+
+<%= link_to '新規作成', new_user_path %>
+<table border="1">
+  <thead>
+    <th>アカウント</th>
+    <th>メールアドレス</th>
+    <th>管理者権限</th>
+    <th>削除</th>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.account %></td>
+        <td><%= user.mail_address %></td>
+        <td><%= user.admin_text %></td>
+        <td><%= link_to "delete", user, method: :delete,
+                                       data: { confirm: "You sure?"} %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
