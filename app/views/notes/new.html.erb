@@ -1,0 +1,13 @@
+<h1>ノートの新規作成</h1>
+
+<%= form_for @note do |form| %>
+  <div>
+    <label>タイトル<label>
+    <%= form.text_field :title %>
+  </div>
+  <div>
+    <label>テキスト<label>
+    <%= form.text_area  :content  %>
+  </div>
+  <%= form.submit '登録' %>
+<% end %>
