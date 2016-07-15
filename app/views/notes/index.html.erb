@@ -12,7 +12,7 @@
     <% @notes.each do |item| %>
       <tr>
         <td><%= item.title %></td>
-        <td><%= item.author_id %></td>
+        <td><%= item.author.account %></td>
         <td><%= item.updated_at %></td>
       </tr>
     <% end %>
