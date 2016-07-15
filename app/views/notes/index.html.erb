@@ -1,3 +1,20 @@
 <h1>ノートの一覧ページ</h1>
 
 <%= link_to '新規作成', new_note_path %>
+
+<table border="1">
+  <thead>
+    <th>タイトル</th>
+    <th>作成者ID</th>
+    <th>更新日時</th>
+  </thead>
+  <tbody>
+    <% @notes.each do |item| %>
+      <tr>
+        <td><%= item.title %></td>
+        <td><%= item.author_id %></td>
+        <td><%= item.updated_at %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
