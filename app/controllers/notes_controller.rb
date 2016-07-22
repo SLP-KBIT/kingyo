@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 class NotesController < ApplicationController
 
   def index 
@@ -16,6 +17,10 @@ class NotesController < ApplicationController
     note.author_id = 1
     note.save
     redirect_to notes_path
+  end
+
+  def edit
+    @note = Note.find(params[:id])
   end
 
 end
