@@ -1,0 +1,21 @@
+<div class="container">
+  <h1>ノートの編集</h1>
+</div>
+
+<%= form_for @note do |f| %>
+  <div class="container bg-info">
+    <div>
+      <h3>タイトル</h3>
+      <%= f.text_field :title, :class => "form-control" %>
+    </div>
+    <div>
+      <h3>テキスト</h3>
+      <%= f.text_area  :content, :class => "form-control" , :rows => "15"%>
+    </div>
+    <br />
+  </div>
+  <div class="container">
+    <br />
+    <%= f.submit '更新', :class => "btn btn-primary" %>
+  </div>
+<% end %>
