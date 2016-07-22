@@ -23,4 +23,17 @@ class NotesController < ApplicationController
     @note = Note.find(params[:id])
   end
 
+  def update
+    @note = Note.find(params[:id])
+    if @note.update_attributes(user_params)
+      redirect_to notes_path
+    else
+      render 'edit'
+    end
+  end
+
+  def user_params
+    params.require(:note).permit('title', 'content')
+  end
+
 end
