@@ -8,6 +8,7 @@
     <th>作成者ID</th>
     <th>更新日時</th>
     <th>編集</th>
+    <th>削除</th>
   </thead>
   <tbody>
     <% @notes.each do |item| %>
@@ -15,7 +16,8 @@
         <td><%= item.title %></td>
         <td><%= item.author.account %></td>
         <td><%= item.updated_at %></td>
-        <td><%= link_to '編集', edit_note_path(item.id) %></td>
+        <td><%= link_to '編集', edit_note_path(item.id), :class => "btn btn-success btn-xs" %></td>
+        <td><%= link_to '削除', note_path(item.id), :method => :delete, data: { confirm: "#{item.title} を削除します" }, :class => "btn btn-danger btn-xs" %></td>
       </tr>
     <% end %>
   </tbody>
