@@ -7,6 +7,7 @@
     <th>タイトル</th>
     <th>作成者ID</th>
     <th>更新日時</th>
+    <th>編集</th>
   </thead>
   <tbody>
     <% @notes.each do |item| %>
@@ -14,6 +15,7 @@
         <td><%= item.title %></td>
         <td><%= item.author.account %></td>
         <td><%= item.updated_at %></td>
+        <td><%= link_to '編集', edit_note_path(item.id) %></td>
       </tr>
     <% end %>
   </tbody>
