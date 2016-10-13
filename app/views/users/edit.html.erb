@@ -1,13 +1,13 @@
 <h1>ユーザ編集</h1>
 
 <%= form_for @user do |form| %>
-  <div>
-    <label>アカウント</label>
-    <%= form.text_field :account %>
+  <div class="form-group">
+    <label for="account">アカウント</label>
+    <%= form.text_field :account, :class => "form-control" %>
   </div>
-  <div>
+  <div class="form-group">
     <label>メールアドレス</label>
-    <%= form.text_field :mail_address %>
+    <%= form.text_field :mail_address, :class => "form-control"%>
   </div>
-  <%= form.submit '登録' %>
+  <%= form.submit '登録', :class => "btn btn-danger" %>
 <% end %>
